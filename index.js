@@ -97,29 +97,29 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 */
 
 
-function mortgageCalculator (princ, interRate, yrs, creditScore) {
-  let monthlyInterestRate = interRate / 12;
-  let placeHolder;
-  const periods = yrs * 12;
+// function mortgageCalculator (princ, interRate, yrs, creditScore) {
+//   let monthlyInterestRate = interRate / 12;
+//   let placeHolder;
+//   const periods = yrs * 12;
 
-  if(creditScore > 740) {
-    placeHolder = monthlyInterestRate * 0.995;
-    interRate = interRate - placeHolder;
-  } else if (creditScore < 660) {
-    placeHolder = monthlyInterestRate * 1.005;
-    interRate = interRate + placeHolder;
-  }
+//   if(creditScore > 740) {
+//     placeHolder = monthlyInterestRate * 0.995;
+//     interRate = interRate - placeHolder;
+//   } else if (creditScore < 660) {
+//     placeHolder = monthlyInterestRate * 1.005;
+//     interRate = interRate + placeHolder;
+//   }
 
-  monthlyInterestRate = interRate / 12;
+//   monthlyInterestRate = interRate / 12;
 
-  const n1 = Math.pow(1 + monthlyInterestRate, periods);
-  const n2 = n1 * monthlyInterestRate;
-  const numerator = n1 * n2;
-  const denominator = n1 - 1;
-  const monthlyRate = n2 / denominator;
+//   const n1 = Math.pow(1 + monthlyInterestRate, periods);
+//   const n2 = n1 * monthlyInterestRate;
+//   const numerator = n1 * n2;
+//   const denominator = n1 - 1;
+//   const monthlyRate = n2 / denominator;
 
-  console.log(`${name}, your monthly rate is ${(princ * monthlyRate).toFixed(2)}.`);
-}
+//   console.log(`${name}, your monthly rate is ${(princ * monthlyRate).toFixed(2)}.`);
+// }
 
 
 
@@ -153,7 +153,7 @@ function variableInterestRate(princ, intr, yrs) {
     let denominator = n1 - 1;
     let monthlyRate = n2 / denominator;
 
-    console.log(`${name}, with an interest rate of 0.02, your monthly rate is $${Math.round(princ * monthlyRate)}`);
+    console.log(`${name}, with an interest rate of ${i.toFixed(3)}, your monthly rate is $${Math.round(princ * monthlyRate)}`);
   }
 }
 
